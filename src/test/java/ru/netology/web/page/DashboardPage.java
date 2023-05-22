@@ -11,8 +11,8 @@ import static com.codeborne.selenide.Selenide.$$;
 public class DashboardPage {
     private final SelenideElement heading = $("[data-test-id=dashboard]"); // страница личного кабинета
     private static final ElementsCollection cards = $$(".list__item div"); //поле с данными карт
-    private final String balanceStart = ", баланс: "; // стартовый баланс по картам
-    private final String balanceFinish = " р. "; //сумма в рублях
+    private final String balanceStart = "баланс: "; // стартовый баланс по картам
+    private final String balanceFinish = " р."; //сумма в рублях
 
     // конструктор проверки видимости страницы приложения
     public DashboardPage() {
@@ -21,7 +21,7 @@ public class DashboardPage {
     }
 
     // метод возвращает баланс карты (метод поиска по тексту)
-    public int getCardBalance(DataHelper.CardInfo cardInfo) { //числовое значение баланса карты
+    public int getCardBalance(DataHelper.CardInfo cardInfo) {
         var text = cards.findBy(text(cardInfo.getCardNumber().substring(15))).getText();
         return extractBalance(text);
     }

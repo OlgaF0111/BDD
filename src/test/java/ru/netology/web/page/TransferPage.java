@@ -16,7 +16,7 @@ public class TransferPage {
     private final SelenideElement amountInput = $("[data-test-id='amount'] input"); // поле ввода суммы перевода
     private final SelenideElement fromInput = $("[data-test-id='from'] input"); // поле ввода номера карты откуда переводим
     private final SelenideElement transferButton = $("[data-test-id='action-transfer']"); //кнопка ПОПОЛНИТЬ
-    private final SelenideElement errorMessage = $("[data-test-id='error-message']"); //сообщение об ошибке
+    private final SelenideElement errorMessage = $("[data-test-id='error-message']"); //сообщение об ошибке "Оштбка! Произошла ошибка"
 
     public TransferPage() {
 
